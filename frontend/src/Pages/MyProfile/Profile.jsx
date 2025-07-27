@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Service from "../utils/http";
+import Service from "../../utils/http";
 import { Avatar, Container, Stack, Text } from "@mantine/core";
 import { useEffect } from "react";
 const service = new Service();

@@ -11,14 +11,14 @@ export const loginWithGoogle = async (req, res) => {
 
     try {
 
-        const { token } = req.body;
+        const { token } = req?.body;
         if(!token) {
             console.error("Google token not found for login in with google. Sending bad request");
             return res.status(400).json({ status: "BAD_REQUEST", message: "Google token not found" });
         }
 
         let ticket;
-        
+        console.log("printing  token", token)
         try {
 
             console.log("Verifying the token of user with google.");

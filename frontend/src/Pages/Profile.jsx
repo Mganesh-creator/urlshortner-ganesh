@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Service from "../utils/http";
-import { Avatar, Stack, Text } from "@mantine/core";
+import { Avatar, Container, Stack, Text } from "@mantine/core";
 import { useEffect } from "react";
 const service = new Service();
 export default function Profile() {
@@ -17,10 +17,30 @@ export default function Profile() {
   }, []);
 
   return (
-    <Stack align="center">
-      <Avatar src={profileData?.avatar} />
-      <Text tt="uppercase"> {profileData?.email}</Text>
-      <Text tt="capitalize"> {profileData?.name}</Text>
-    </Stack>
+    <Container>
+      <Stack
+        h={500}
+        bg="var(--mantine-color-body)"
+        align="center"
+        justify="center"
+        gap="lg"
+      >
+        <Avatar
+          variant="outline"
+          radius="xl"
+          size="xl"
+          color="pink"
+          src={profileData?.avatar}
+        />
+        <Text tt="">
+          {" "}
+          <strong>Email: </strong>:{profileData?.email}
+        </Text>
+        <Text tt="capitalize">
+          <strong>Name: </strong>
+          {profileData?.name}
+        </Text>
+      </Stack>
+    </Container>
   );
 }

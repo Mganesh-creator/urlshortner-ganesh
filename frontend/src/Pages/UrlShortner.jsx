@@ -6,7 +6,6 @@ const service = new Service();
 
 export default function UrlShortener() {
   const generateShortUrl = async () => {
-    console.log(input?.originalUrl);
     try {
       const data = await service.post("s", input);
       console.log(data);

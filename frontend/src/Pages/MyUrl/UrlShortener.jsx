@@ -1,6 +1,7 @@
 import { Button, Container, TextInput } from "@mantine/core";
 import React, { useState } from "react";
 import Service from "../utils/http";
+import Response from "../../Components/response";
 
 const service = new Service();
 
@@ -8,11 +9,12 @@ export default function UrlShortener() {
   const generateShortUrl = async () => {
     try {
       const data = await service.post("s", input);
+      setResponse(data);
       console.log(data);
     } catch (error) {
       console.error("Error generating short URL:", error);
     }
-  };
+  }
 
   const [input, setInput] = useState({
     originalUrl: "",
@@ -20,9 +22,12 @@ export default function UrlShortener() {
     expiresAt: "",
     title: "",
   });
+  const[response,setResponse] = useState(null);
 
   return (
     <Container size={"xs"}>
+        {!response?
+        <>
       URL Shortener
       <TextInput
         size="lg"
@@ -67,6 +72,12 @@ export default function UrlShortener() {
       >
         Button
       </Button>
+      </>
+      :
+      <Response
+      response={response}
+      setResponse={setResponse}/>
+    }
     </Container>
-  );
+  )
 }

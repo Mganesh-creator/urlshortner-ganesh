@@ -6,12 +6,8 @@ function joinURL(baseURL, url) {
 
 class Service {
   constructor() {
-    this.domain = "";
-    if (import.meta.env.VITE_BZENV === "development") {
-      this.domain = import.meta.env.VITE_DEV_PROXY;
-    }
+    this.domain = import.meta.env.VITE_API_URL || "";
   }
-
   async request(url, method = "POST", data) {
     url = joinURL(this.domain, "api/" + url);
 
@@ -51,7 +47,6 @@ class Service {
     const method = "PATCH";
     return this.request(url, method, data);
   }
-
 
   getBaseURL = () => {
     if (import.meta.env.VITE_BZENV === "development") {

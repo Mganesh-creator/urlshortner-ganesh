@@ -4,6 +4,13 @@
 [![npm downloads](https://img.shields.io/npm/dm/create-bz-mern-app.svg)](https://www.npmjs.com/package/create-bz-mern-app)
 [![GitHub stars](https://img.shields.io/github/stars/kaushikkumarbz/create-bz-mern-app?style=social)](https://github.com/kaushikkumarbz/create-bz-mern-app)
 
+## 🚀 Live Demo
+
+- 🌐 Frontend: https://urlshortner-ganesh.vercel.app
+- ⚙️ Backend API: https://urlshortner-ganesh.onrender.com
+
+
+
 A modern fullstack boilerplate powered by:
 
 - ⚛️ **Frontend**: Vite + React + Mantine  
